@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class BugCommitReq extends BaseReq {
+public class BugCommitReq extends ReqBase {
 
     /**
      * 手机品牌
@@ -22,6 +22,26 @@ public class BugCommitReq extends BaseReq {
      * 错误日志
      */
     private String bugData;
+
+    /**
+     * 手机系统
+     */
+    private String debugOS;
+
+    /**
+     * 手机系统版本
+     */
+    private String debugOSVersion;
+
+    /**
+     * 经度
+     */
+    private double debugLon;
+
+    /**
+     * 纬度
+     */
+    private double debugLat;
 
 
     @Override

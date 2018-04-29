@@ -1,9 +1,12 @@
 package com.ruan.debug.service;
 
+import com.ruan.debug.bean.BugBean;
 import com.ruan.debug.bean.Req.BugCommitReq;
-import org.springframework.stereotype.Service;
+import com.ruan.debug.bean.Req.BugGetReq;
+import com.ruan.debug.bean.Req.BugPageGetReq;
 
-@Service
+import java.util.ArrayList;
+
 public interface IBugCommit {
 
     /**
@@ -11,6 +14,29 @@ public interface IBugCommit {
      * @param req
      * @return
      */
-    public int commitBug(BugCommitReq req);
+    public int BugCommit(BugCommitReq req);
+
+
+    /**
+     * 分页获取 bug数据
+     * @param req
+     * @return
+     */
+    public ArrayList<BugBean> BugPageGet(BugPageGetReq req);
+
+
+    /**
+     * 获取bug 总数量
+     * @return
+     */
+    public long BugGetTotal();
+
+
+    /**
+     * 获取指定bug
+     * @param req
+     * @return
+     */
+    public BugBean BugGet(BugGetReq req);
 
 }

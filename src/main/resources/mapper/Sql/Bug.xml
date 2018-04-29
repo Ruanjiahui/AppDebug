@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruan.debug.mapper.BugCommitMapper">
+    <!--插入错误日志-->
+    <insert id="commitBug" parameterType="com.ruan.debug.bean.Req.BugCommitReq" useGeneratedKeys="true" keyProperty="debugID">
+        INSERT INTO debug.debugdata (debugSource, debugBround, debugModel, debugTime , debugOS , debugOSVersion , debugLon , debugLat) VALUES (#{bugData} , #{bround} , #{model} , now() , #{debugOS} , #{debugOSVersion} , #{debugLon} , #{debugLat})
+    </insert>
+
+
+    <!--分页获取bug-->
+    <select id="BugPageGet" parameterType="com.ruan.debug.bean.Req.BugPageGetReq" resultType="com.ruan.debug.bean.BugBean">
+        SELECT * from debug.debugdata limit #{pagecount} offset #{startFlag}
+    </select>
+
+
+    <!--获取bug数据总数量-->
+    <select id="BugGetTotal" resultType="java.lang.Long">
+        SELECT count(*) from debug.debugdata
+    </select>
+
+
+    <!--获取指定bug-->
+    <select id="BugGet" parameterType="com.ruan.debug.bean.Req.BugGetReq" resultType="com.ruan.debug.bean.BugBean">
+        SELECT * from debug.debugdata where debugID = #{debugID}
+    </select>
+
+</mapper>
