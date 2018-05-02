@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ruan.debug.mapper.BugCommitMapper">
     <!--插入错误日志-->
-    <insert id="commitBug" parameterType="com.ruan.debug.bean.Req.BugCommitReq" useGeneratedKeys="true" keyProperty="debugID">
-        INSERT INTO debug.debugdata (debugSource, debugBround, debugModel, debugTime , debugOS , debugOSVersion , debugLon , debugLat) VALUES (#{bugData} , #{bround} , #{model} , now() , #{debugOS} , #{debugOSVersion} , #{debugLon} , #{debugLat})
+    <insert id="BugCommit" parameterType="com.ruan.debug.bean.Req.BugCommitReq" useGeneratedKeys="true" keyProperty="debugID">
+        INSERT INTO debug.debugdata (debugSource, debugBround, debugModel, debugTime , debugOS , debugOSVersion , debugLon , debugLat , appPackage , appVersionCode , appVersionName , appInstallDate , appInstallUpdateDate , phoneType) VALUES (#{bugData} , #{bround} , #{model} , now() , #{debugOS} , #{debugOSVersion} , #{debugLon} , #{debugLat} , #{appPackage} , #{appVersionCode} , #{appVersionName} , #{appInstallDate} , #{appInstallUpdateDate} , #{phoneType})
     </insert>
 
 
     <!--分页获取bug-->
     <select id="BugPageGet" parameterType="com.ruan.debug.bean.Req.BugPageGetReq" resultType="com.ruan.debug.bean.BugBean">
-        SELECT * from debug.debugdata limit #{pagecount} offset #{startFlag}
+        SELECT debugID , debugBround , debugModel , debugTime , debugOS , debugOSVersion , appVersionName , appVersionCode from debug.debugdata limit #{pagecount} offset #{startFlag}
     </select>
 
 

@@ -9,7 +9,7 @@ import static com.ruan.debug.Utils.RespCode.*;
 /**
  * Created by 19820 on 2018/4/30.
  */
-public class BasePresenter {
+public class BaseController {
 
     @Autowired
     private RespBase respBase;

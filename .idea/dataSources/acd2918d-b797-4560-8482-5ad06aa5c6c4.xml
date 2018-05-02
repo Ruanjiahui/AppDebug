@@ -31,12 +31,12 @@
     <column id="15" parent="12" name="debugBround">
       <Position>3</Position>
       <Comment>手机品牌</Comment>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
     </column>
     <column id="16" parent="12" name="debugModel">
       <Position>4</Position>
       <Comment>手机型号</Comment>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
     </column>
     <column id="17" parent="12" name="debugTime">
       <Position>5</Position>
@@ -47,12 +47,12 @@
     <column id="18" parent="12" name="debugOS">
       <Position>6</Position>
       <Comment>手机系统</Comment>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
     </column>
     <column id="19" parent="12" name="debugOSVersion">
       <Position>7</Position>
       <Comment>手机系统版本</Comment>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
     </column>
     <column id="20" parent="12" name="debugLon">
       <Position>8</Position>
@@ -64,7 +64,38 @@
       <Comment>纬度</Comment>
       <DataType>double|0</DataType>
     </column>
-    <key id="22" parent="12" name="PRIMARY">
+    <column id="22" parent="12" name="appPackage">
+      <Position>10</Position>
+      <Comment>app报名</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="23" parent="12" name="appVersionCode">
+      <Position>11</Position>
+      <Comment>app版本号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="24" parent="12" name="appVersionName">
+      <Position>12</Position>
+      <Comment>app版本名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="25" parent="12" name="appInstallDate">
+      <Position>13</Position>
+      <Comment>app安装日期</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="26" parent="12" name="appInstallUpdateDate">
+      <Position>14</Position>
+      <Comment>app更新日期</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="27" parent="12" name="phoneType">
+      <Position>15</Position>
+      <Comment>当前设备类型
+phone  pad</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="28" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>debugID</ColNames>
       <Primary>1</Primary>

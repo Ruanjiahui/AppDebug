@@ -43,6 +43,33 @@ public class BugCommitReq extends ReqBase {
      */
     private double debugLat;
 
+    /**
+     * app包名
+     */
+    private String appPackage;
+    /**
+     * app版本名称
+     */
+    private String appVersionName;
+
+    /**
+     * app版本号
+     */
+    private int appVersionCode;
+    /**
+     * app安装日期
+     */
+    private String appInstallDate;
+    /**
+     * app 更新日期
+     */
+    private String appInstallUpdateDate;
+
+    /**
+     * 安装类型
+     */
+    private String phoneType;
+
 
     @Override
     public String toString() {
